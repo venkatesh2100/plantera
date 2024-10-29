@@ -14,7 +14,10 @@ datasource db {
 }
 
 model user {
-  id        Int     @default(autoincrement(uuid))
-  email     String
-  password  String
+  id             String   @id @default(uuid())
+  email          String   @unique
+  password       String
+  emailVerified  DateTime?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 }

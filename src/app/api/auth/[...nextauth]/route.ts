@@ -11,7 +11,9 @@ const handler = NextAuth({
       },
       async authorize(credentials: any) {
         return {
-          id: "user2",
+          id: "1",
+          name: "ajeet",
+          email: "123456"
         };
       },
     }),

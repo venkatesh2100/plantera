@@ -2,20 +2,23 @@
 
 import Image from "next/image";
 import { Buttonbox } from "@/components/button";
-import { signIn } from "next-auth/react";
-import { Sessioncom } from "@/components/Session";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Home() {
+  const session = useSession()
   return (
     <div className="text-3xl">
       hi there
+      <br></br>
       <button onClick={()=>{
         signIn();
       }}>signin</button>
-      <div>
-        <Buttonbox/>
-        <Sessioncom/>
-      </div>
+      <br></br>
+      <button onClick={()=>{
+        signOut();
+      }}>signOut</button>
+      <br></br>
+      {JSON.stringify(session)}
     </div>
   );
 }

@@ -59,9 +59,11 @@ export default function SignupPage() {
             type="submit"
             className="w-full py-2 mt-4 text-white bg-blue-500 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
-            Sign Up
+            Sign In
           </button>
         </form>
+        <button>Sigin in with Google</button>
+        <button>Sigin in with github</button>
         
         {message && <p className="mt-4 text-center text-blue-500">{message}</p>}
       </div>

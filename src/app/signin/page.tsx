@@ -1,31 +1,22 @@
-"use client"
+"use client";
 
+import { signIn } from "next-auth/react";
 // pages/signup.tsx
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function SignupPage() {
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-  const [message, setMessage] = useState<string>('');
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
 
-  const handleSignup = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
+  const handleSignup = async () => {
     try {
-      const res = await fetch('/api/request-signup', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
+      signIn("credentials", {
+        email,
+        password,
       });
-
-
-      if (res.ok) {
-        setMessage('OTP sent to your email! Please verify to complete signup.');
-      } else {
-        setMessage('Something went wrong.');
-      }
     } catch (error) {
-      setMessage('Failed to send OTP. Please try again later.');
+      setMessage("Failed to send OTP. Please try again later.");
     }
   };
 
@@ -33,7 +24,7 @@ export default function SignupPage() {
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 bg-white rounded shadow-md">
         <h1 className="mb-6 text-2xl font-semibold text-center">Sign Up</h1>
-        
+
         <form onSubmit={handleSignup} className="space-y-4">
           <div>
             <label className="block text-gray-700">Email:</label>
@@ -64,7 +55,7 @@ export default function SignupPage() {
         </form>
         <button>Sigin in with Google</button>
         <button>Sigin in with github</button>
-        
+
         {message && <p className="mt-4 text-center text-blue-500">{message}</p>}
       </div>
     </div>

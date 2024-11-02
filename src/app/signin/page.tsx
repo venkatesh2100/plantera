@@ -11,17 +11,16 @@ export default function() {
     return <div>
         <input onChange={(e)=>{
             setUsername(e.target.value);
-        }} type="text" placeholder='Email' />
+        }} type="email" placeholder='Email' />
         <input onChange={(e)=>{
             setPassword(e.target.value);
-        }} type="text" placeholder='Password' />
+        }} type="password" placeholder='Password' />
         <button onClick={async () => {
-            const res = await signIn("credentials", {
+            await signIn("credentials", {
                 username: username,
                 password: password,
                 redirect: false,
             });
-            console.log(res);
             router.push("/")
         }}>Login with email</button>
         

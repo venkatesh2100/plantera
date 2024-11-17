@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --plant-bg: #FAE7D9;
+  --plant-nav-text:#576746;
+  --plant-footer-bg:#9AB689;
+}
+
+body {
+  background: var(--plant-bg);
+}

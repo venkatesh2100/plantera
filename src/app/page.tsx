@@ -7,8 +7,8 @@ import Footer from "@/components/footer";
 
 
 interface ImageProps {
-  image: string; // URL of the image
-  alt: string;   // Alt text for the image
+  image: string;
+  alt: string; 
   name: string;
 }
 

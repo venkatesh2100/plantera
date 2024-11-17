@@ -7,7 +7,7 @@ import Footer from "@/components/footer";
 
 
 interface ImageProps {
-  image: string;
+  image: string;//hasd
   alt: string; 
   name: string;
 }

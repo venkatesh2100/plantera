@@ -27,14 +27,12 @@ export default function Login() {
           className="w-full p-3 mb-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
           onChange={(e) => setUsername(e.target.value)}
         />
-
         <input
           type="password"
           placeholder="Password"
           className="w-full p-3 mb-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
           onChange={(e) => setPassword(e.target.value)}
         />
-
         <button
           onClick={async () => {
             await signIn("credentials", { username, password, redirect: false });

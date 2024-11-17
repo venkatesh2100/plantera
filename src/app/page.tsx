@@ -5,8 +5,15 @@ import { NavBar } from "../components/navbar";
 import Image from "next/image";
 import Footer from "@/components/footer";
 
+
+interface ImageProps {
+  image: string; // URL of the image
+  alt: string;   // Alt text for the image
+  name: string;  // Name or label for the image
+}
+
 // Reusable ProductCard Component
-const ProductCard = ({ image, alt, name }) => (
+const ProductCard = ({ image, alt, name }: ImageProps) => (
   <div className="text-center">
     <Image src={image} alt={alt} width={128} height={128} />
     <p className="mt-2">{name}</p>
@@ -33,7 +40,7 @@ export default function Home() {
       <div className="relative text-center bg-[#F9EDE2] h-[100vh]">
         {/* Background Image */}
         <Image
-          src="/Section 1_cleanup.png"
+          src="https://s3-alpha-sig.figma.com/img/d053/7814/4e5e8a88e68f247771e365a7e5dc1cef?Expires=1732492800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=KW0EcTR497lw~tI96aGgZgqURFZGR4xtSJ94~oOM759FsxPHC9sK1aa86oBpIXHuclGYEA3jXXalXRKrUt6xwFworikuwoatR2Y2tsogF6nH3WHpscJe3LjZgpMI5qL91seymcVurcjOOVJ4onldiZtYuV6UTFnzheCHldrmycjVJJJRdkP~dl0zsQrZKEumcfyz7X4ChP-edfV7zMZvZf47cnVDYSzpCmR4fpC3hUq~2LHItZtfV7gcOqPAzdN0oS8NewIdcDW-yWynylJ-SqFVsAHvWzx2-PayKVNKpqbDqPpOoCWDjM7BDnl2S4f71~7-Z9iulxu1RVGrrnneeA__"
           alt="Hero Background"
           fill
           style={{ objectFit: "cover" }}

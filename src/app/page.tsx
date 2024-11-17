@@ -9,7 +9,7 @@ import Footer from "@/components/footer";
 interface ImageProps {
   image: string; // URL of the image
   alt: string;   // Alt text for the image
-  name: string;  // Name or label for the image
+  name: string;
 }
 
 // Reusable ProductCard Component
